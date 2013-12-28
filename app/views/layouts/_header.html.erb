@@ -35,9 +35,14 @@
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "login", "www.google.com" %></li>
-
-      </li>
+    	<% if user_signed_in? %>	
+    			 <li><%= link_to "edit profile", edit_user_registration_path %></li>
+      		 <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
+     		 <li><%= link_to "     ", destroy_user_session_path, method: :delete %></li>
+      	<%else%>
+      		<li><%= link_to "login", new_user_session_path %></li>
+      		<li><%= link_to "     ", new_user_session_path %></li>
+      <%end%>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

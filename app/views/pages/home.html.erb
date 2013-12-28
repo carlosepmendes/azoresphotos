@@ -1,10 +1,18 @@
+  <% if user_signed_in? %>  
+    <div class="jumbotron">
+      <h1>Bem vindo de volta ao Photo Azores!</h1>
+      <p>Este é um projecto feito por Açoreanos para Açoreanos!</p>
 
-<div class="jumbotron">
-  <h1>Bem vindo ao Photo Azores!</h1>
-  <p>Este é um projecto feito por Açoreanos para Açoreanos!</p>
-  <p><a class="btn btn-primary btn-lg" role="button">Sign Up!</a></p>
-</div>
+  <%else%>
+
+    <div class="jumbotron">
+      <h1>Bem vindo ao Photo Azores!</h1>
+      <p>Este é um projecto feito por Açoreanos para Açoreanos!</p>
+      <p>
+        <%= link_to "Sign Up!", new_user_registration_path, class: "btn btn-primary btn-lg"%>
+      </p>
+    </div>
 
 
-
+  <%end%>  
 
